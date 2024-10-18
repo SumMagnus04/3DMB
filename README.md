@@ -34,6 +34,11 @@ void DMB_UpdateCamera2D(Camera2D* camera)
   - Updates the camera matrix if the position or scale of the camera has been changes recently.
   - Should be called in the game loop.
 
+void DMB_SetMouseToCamera(Camera2D* camera, Mouse* mouse, vec2 cameraCoords)
+  - camera - a pointer to a camera struct.
+  - mouse - a pointer to a mouse struct.
+  - cameraCoords - a cglm vector, the new mouse coordinates with reference to the camera position. This parameter will be modified by the function.
+
 Mouse DMB_InitMouse()
   - Returns an initialized mouse struct.
 
