@@ -11,4 +11,7 @@ void DMB_Init()
 
 DMB_CreateWindow(const char* name, int screenWidth, int screenHeight, unsigned int currentFlags)
   - name - the name of the window.
+  - screenWidth - the width of the window.
+  - screenHeight - the height of the window.
+  - currentFlags - NONE, INVISIBLE, FULLSCREEN, BORDERLESS
   - Initializes the DMB_WINDOW.
