@@ -82,3 +82,8 @@ void DMB_UseGLSLProgram(GLSLProgram* glsl)
 void DMB_UnuseGLSLProgram(GLSLProgram* glsl)
   - glsl - a pointer to a GLSLProgram struct.
   - Frees OpenGL from the shader program. Should be called before swapping the buffers. Must be called before using another shader program.
+
+GLint DMB_GetUniformLocation(GLSLProgram* glsl, const char* uniformName)
+  - glsl - a pointer to a GLSLProgram struct.
+  - unifromName - The name must match exactly to what is in the shader programs.
+  - Returns the index of the uniform in the program with the specified name.
