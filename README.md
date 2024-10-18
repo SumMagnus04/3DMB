@@ -6,4 +6,5 @@ Additional required libraries:
 Library functions:
 
 void DMB_Init()
-  Required before using any other DMB functions. Initializes SDL and the DMB_WINDOW.
+  - Required before using any other DMB functions.
+  - Initializes SDL and the DMB_WINDOW.
