@@ -70,3 +70,15 @@ void DMB_AddAttribute(GLSLProgram* glsl, const char* attributeName)
   - glsl - a pointer to a GLSLProgram sruct.
   - attributeName - the name of the attribute in the GLSL shader program.
   - Attributes should be added after compilation and before linking. The name must match exactly to what is in the shader programs.
+
+void DMB_LinkShaders(GLSLProgram* glsl)
+  - glsl - a pointer to a GLSLProgram struct.
+  - Links the shader programs.
+
+void DMB_UseGLSLProgram(GLSLProgram* glsl)
+  - glsl - a pointer to a GLSLProgram struct.
+  - Tells OpenGL which shader program to use. When you finish drawing things with the shader program, you must call DMB_UnuseGLSLProgram.
+
+void DMB_UnuseGLSLProgram(GLSLProgram* glsl)
+  - glsl - a pointer to a GLSLProgram struct.
+  - Frees OpenGL from the shader program. Should be called before swapping the buffers. Must be called before using another shader program.
