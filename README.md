@@ -43,6 +43,13 @@ void DMB_KeyDown(int sdl_key, int* keys, Mouse* mouse)
   - sdl_key - The SDL_Event event.key.keysym.sym.
   - keys - an array for tracking which keys get pressed.
   - mouse - a pointer to a mouse struct.
+  - Updates the keys array / mouse struct by noting which key is pressed.
+
+void DMB_KeyUp(int sdl_key, int* keys, Mouse* mouse)
+  - sdl_key - The SDL_Event event.key.keysym.sym.
+  - keys - an array for tracking which keys get pressed.
+  - mouse - a pointer to a mouse struct.
+  - Updates the keys array / mouse struct by noting which key is released.
 
 Mouse DMB_InitMouse()
   - Returns an initialized mouse struct. This function should be used whenever a new mouse is created.
@@ -53,4 +60,13 @@ void DMB_SetMouseCoords(Mouse* mouse, float x, float y)
   - y - the mouse y.
   - This function should be used when handling inputs, its purpose is to update the mouse struct to reflect the position of the mouse whenver it moves.
 
+void DMB_CompileShaders(GLSLProgram* glsl, const char* vertexShaderFilePath, const char* fragmentShaderFilePath)
+  - glsl - a pointer to a GLSLProgram struct.
+  - vertexShaderFilePath - the file path to the vertex shader program file.
+  - fragmentShaderFilePath - the file path to the fragment shader program file.
+  - Compiles the vertex and fragment shaders and stores the necessary information in the GLSLProgram struct.
 
+void DMB_AddAttribute(GLSLProgram* glsl, const char* attributeName)
+  - glsl - a pointer to a GLSLProgram sruct.
+  - attributeName - the name of the attribute in the GLSL shader program.
+  - Attributes should be added after compilation and before linking. The name must match exactly to what is in the shader programs.
