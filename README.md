@@ -19,7 +19,7 @@ void DMB_CreateWindow(const char* name, int screenWidth, int screenHeight, unsig
 Camera DMB_InitCamera(int screenWidth, int screenHeight)
   - screenWidth - the screen width.
   - screenHeight - the screen height.
-  - Returns an initialized camera struct.
+  - Returns an initialized camera struct. This function should be used whenever a new camera is created.
 
 void DMB_SetPositionCamera2D(Camera2D* camera, vec2 newPosition)
   - camera - a pointer to a camera struct.
@@ -39,7 +39,18 @@ void DMB_SetMouseToCamera(Camera2D* camera, Mouse* mouse, vec2 cameraCoords)
   - mouse - a pointer to a mouse struct.
   - cameraCoords - a cglm vector, the new mouse coordinates with reference to the camera position. This parameter will be modified by the function.
 
+void DMB_KeyDown(int sdl_key, int* keys, Mouse* mouse)
+  - sdl_key - The SDL_Event event.key.keysym.sym.
+  - keys - an array for tracking which keys get pressed.
+  - mouse - a pointer to a mouse struct.
+
 Mouse DMB_InitMouse()
-  - Returns an initialized mouse struct.
+  - Returns an initialized mouse struct. This function should be used whenever a new mouse is created.
+
+void DMB_SetMouseCoords(Mouse* mouse, float x, float y)
+  - mouse - a pointer to a mouse struct.
+  - x - the mouse x.
+  - y - the mouse y.
+  - This function should be used when handling inputs, its purpose is to update the mouse struct to reflect the position of the mouse whenver it moves.
 
 
