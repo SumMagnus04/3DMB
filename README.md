@@ -60,6 +60,10 @@ void DMB_SetMouseCoords(Mouse* mouse, float x, float y)
   - y - the mouse y.
   - This function should be used when handling inputs, its purpose is to update the mouse struct to reflect the position of the mouse whenver it moves.
 
+char* DMB_ReadFile(const char* filePath)
+  - filePath - the path to the file to read.
+  - Returns a c string with the contents of the file.
+
 void DMB_CompileShaders(GLSLProgram* glsl, const char* vertexShaderFilePath, const char* fragmentShaderFilePath)
   - glsl - a pointer to a GLSLProgram struct.
   - vertexShaderFilePath - the file path to the vertex shader program file.
